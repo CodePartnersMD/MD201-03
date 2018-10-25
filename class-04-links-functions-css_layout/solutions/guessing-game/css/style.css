@@ -1,0 +1,77 @@
+body {
+  font-family: arial, sans-serif;
+  background-color: #ABF8FF;
+}
+header > h1 {
+font-size: 60px;
+margin-bottom: -5px;
+margin-top: -5px;
+margin-left: 20px;
+/*float: left;*/
+}
+
+.quiz {
+  width: 17%;
+  margin-left: 47px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  color: navy;
+}
+
+header {
+  width: 100%;
+  background-image: url("../img/headerbg.jpg");
+  background-size: 100%;
+  /*position: absolute; <--- Don't know how to make this work. Want the header to scroll with the page but not cover the other elements.*/
+  border: navy solid 6px;
+}
+
+.profile {
+  height: 200px;
+  width: 200px;
+  border-radius: 20%;
+  border: solid navy 5px;
+  margin-left: 50px;
+  margin-bottom: -10px;
+}
+
+#content {
+  float: left;
+  width: 75%;
+}
+
+#dance {
+  height: 150px;
+  width: 150px;
+  /*margin-left: 150px;
+  margin-bottom: -35px;
+  margin-top: -50px;*/
+
+}
+
+#spock {
+  height: 150px;
+  width: 150px;
+  /*margin-left: 150px;
+  margin-bottom: -10px;
+  margin-top: -40px;*/*/
+}
+
+#content {
+  margin: auto 70px;
+  position: relative;
+}
+
+aside {
+  float: right;
+  width: 25%;
+  background-color: cyan;
+  border: 3px blue solid;
+  border-radius: 15px;
+  margin-top: -650px;
+
+}

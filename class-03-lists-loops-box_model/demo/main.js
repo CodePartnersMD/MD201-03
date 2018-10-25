@@ -54,7 +54,7 @@ for(let i = 0; i < heroArray.length; i++) {
     break
     //else alert the user they are wrong and how many chances they have left determined by subtracting the current value of i from the length of the hero array
   } else {
-    alert('Sorry Try again, you have ' + (heroArray.length - (i)) + ' more tries')
+    alert('Sorry Try again, you have ' + ((heroArray.length - 1) - (i)) + ' more tries')
   }
   console.log('index is now ', i)
   console.log(heroArray[i])
