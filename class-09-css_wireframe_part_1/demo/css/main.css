@@ -1,0 +1,49 @@
+body {
+  width: 100%;
+  margin: 0px;
+  color: black;
+}
+
+nav {
+  width: 100%;
+  background-color: turquoise;
+}
+
+#logo {
+  width:50px;
+  height: 60px;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+aside {
+  width: 20%;
+  height: 500px;
+  background-color: lightblue;
+  float: left;
+}
+
+main {
+  width: 80%;
+  background-color: lightcoral;
+  float: left;
+  height: 250px;
+}
+
+article {
+  width: 40%;
+  background-color: lightpink;
+  height: 250px;
+  float: left;
+}
+
+footer {
+  width: 100%;
+  background-color: lightgreen;
+  float: left;
+  height: 100px;
+}
