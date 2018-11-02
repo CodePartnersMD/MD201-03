@@ -14,6 +14,7 @@ let WizardSchool = function(name, min, max, spells) {
   this.maxStudents = max
   this.minStudents = min
   this.spellsPerStudent = spells
+  this.spellsArray = []
 }
 
 //create a prototype method on our wizardschool constructor that will return a random number between the min and max students multiply that by number of spells cast per student
@@ -52,9 +53,11 @@ WizardSchool.prototype.renderNewSchool = function() {
   elRow.appendChild(elTh)
   elTh.innerText = this.schoolName
   for(let i = 0; i < hours.length; i++) {
+    let spellsPerHour = this.spellsCastPerHour()
     let elTd = document.createElement('td')
     elRow.appendChild(elTd)
-    elTd.innerText = this.spellsCastPerHour()
+    elTd.innerText = spellsPerHour
+    this.spellsArray.push(spellsPerHour)
   }
 }
 
@@ -63,6 +66,26 @@ for(let j = 0; j < schools.length; j++) {
   schools[j].renderNewSchool()
 }
 
+let renderFooter = function() {
+  let elRow = document.createElement('tr')
+  elSchoolTable.appendChild(elRow)
+  let elThead = document.createElement('th')
+  elRow.appendChild(elThead)
+  elThead.innerText = 'Totals'
+  for(let i = 0; i < hours.length; i++) {
+
+    let counter = 0
+    for(let j = 0; j < schools.length; j++) {
+      counter+= schools[j].spellsArray[i]
+      console.log(schools[j].spellsArray[i])
+    }
+    let elTd = document.createElement('td')
+    elRow.appendChild(elTd)
+    elTd.innerText = counter
+  }
+}
+renderFooter()
+
 //access our inputs on our form through dot notation
 let elNameOfSchool = elForm.nameOfSchool 
 let elMinStudents = elForm.minStudents
@@ -70,10 +93,12 @@ let elMinStudents = elForm.minStudents
 //create an event listener that will listen for a submit event and create a new instance of our constructor function using the values collected from our form
 elForm.addEventListener('submit', function(event) {
   event.preventDefault()
+  elSchoolTable.removeChild(elSchoolTable.lastChild)
   let newSchool = new WizardSchool(elNameOfSchool.value, parseInt(elMinStudents.value), 20, 4)
   schools.push(newSchool)
   //invoke our rendernewschool method on our new school to generate a new row on our table. 
   newSchool.renderNewSchool()
+  renderFooter()
 })
 
 
