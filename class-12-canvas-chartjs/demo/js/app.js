@@ -41,6 +41,7 @@ let clickHandler = function(event) {
     ThirdImage.clicked++
   }
   displayImages()
+  displayChart()
 }
 
 let displayImages = function() {
